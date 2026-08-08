@@ -5,15 +5,10 @@ DEBUG = env.bool("DEBUG", default=True)
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# SQLite makes the project runnable immediately; set DATABASE_URL to a Supabase
+# PostgreSQL connection string for a production-like environment.
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DB_NAME"),
-        "USER": env("DB_USER"),
-        "PASSWORD": env("DB_PASSWORD"),
-        "HOST": env("DB_HOST"),
-        "PORT": env("DB_PORT"),
-    }
+    "default": env.db("DATABASE_URL", default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
 }
 
 ALLOWED_HOSTS = []
