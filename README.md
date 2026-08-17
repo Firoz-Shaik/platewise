@@ -8,7 +8,9 @@ PlateWise is a multi-tenant hostel meal intelligence platform. It helps teams pl
 - Student directory plus safe CSV roster preview and idempotent transactional commit.
 - Meal session lifecycle (`draft → open → closed`) with quantity validation.
 - Duplicate-safe attendance backed by a database uniqueness constraint.
-- Daily operational summary endpoint and a separate React/Vite operations dashboard.
+- Daily operational summary endpoint.
+
+The React/Vite client is maintained separately in the `platewise-frontend` repository.
 
 ## Run locally
 
@@ -19,14 +21,6 @@ pip install -r requirements/development.txt
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
-```
-
-In a second terminal:
-
-```bash
-cd frontend
-npm install
-npm run dev
 ```
 
 ## API

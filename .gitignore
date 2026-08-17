@@ -43,7 +43,7 @@ build/
 dist/
 *.egg-info/
 
-# Frontend
+# Frontend build artifacts retained locally during the repository split
 frontend/node_modules/
 frontend/dist/
 *.tsbuildinfo
